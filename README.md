@@ -26,6 +26,7 @@ combine them into one markdown document.
  * root match 
  * copy everything out of `a:md` 
 
+## Copying
 Copyright (c) 2012, Regents of the University of California
 All rights reserved.
 

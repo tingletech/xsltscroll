@@ -51,6 +51,7 @@ combine them into one markdown document.
   </xsl:template>
 
 <a:md>
+## Copying
 Copyright (c) 2012, Regents of the University of California
 All rights reserved.
 
