@@ -14,7 +14,7 @@ xsltproc xsltscroll.xslt xsltscroll.xslt > README.md
 ## Annotation Elements
 
 XSLT Scrool works by using annotation elements
-`{http://tingletech.github.com/xsltscroll}:md` to hold text in the
+`{http://github.com/tingletech/xsltscroll}:md` to hold text in the
 [markdown](http://daringfireball.net/projects/markdown/) format.
 
 This XSLT 1.0 XSLT will extract all the annotation elements and
