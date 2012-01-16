@@ -3,7 +3,7 @@ A tool attempting literate programming with XSLT
 
 I would have called this literate XSLT, but that is too close to a
 [claimed trademark](http://www.cranesoftwrights.com/ns/literate-xslt/index.htm) so
-it is just XML Scroll.
+it is just XSLT Scroll.
 
 ## Example
 
