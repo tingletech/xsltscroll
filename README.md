@@ -1,3 +1,4 @@
+
 # XSLT Scroll
 A tool attempting literate programming with XSLT
 
@@ -22,9 +23,10 @@ combine them into one markdown document.
 
 ## Code Documentation
 
- * set `xsl:output` to text, utf-8
- * root match 
- * copy everything out of `a:md` 
+
+ * set `xsl:output` to text, utf-8 (35)
+ * root match (42)
+ * copy everything out of `a:md` (47)
 
 ## Copying
 Copyright (c) 2012, Regents of the University of California

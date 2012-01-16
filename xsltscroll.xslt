@@ -5,6 +5,8 @@
   version="1.0"
   xmlns:exsl="http://exslt.org/common"
   extension-element-prefixes="exsl"
+  xmlns:saxon="http://icl.com/saxon"
+  exclude-result-prefixes="saxon"
   xmlns:a="http://github.com/tingletech/xsltscroll"
 >
 <a:md># XSLT Scroll
@@ -30,26 +32,28 @@ This XSLT 1.0 XSLT will extract all the annotation elements and
 combine them into one markdown document.
 
 ## Code Documentation
-
- * set `xsl:output` to text, utf-8
-</a:md>
+</a:md><a:md l='l'>
+ * set `xsl:output` to text, utf-8 </a:md>
   <xsl:output 
     method="text"
     encoding="utf-8"
   />
 
-<a:md> * root match 
-</a:md>
+<a:md l='l'> * root match </a:md>
   <xsl:template match="/">
     <xsl:apply-templates select="//a:md" mode="extract"/>
   </xsl:template>
 
-<a:md> * copy everything out of `a:md` 
-</a:md>
-  <xsl:template match="a:md">
+<a:md l='l'> * copy everything out of `a:md` </a:md>
+  <xsl:template match="a:md" mode="extract"><xsl:text>
+</xsl:text>
     <xsl:copy-of select="."/>
+    <xsl:if test="@l='l'">
+      <xsl:text>(</xsl:text>
+      <xsl:value-of select="saxon:line-number()"/>
+      <xsl:text>)</xsl:text>
+    </xsl:if>
   </xsl:template>
-
 <a:md>
 ## Copying
 Copyright (c) 2012, Regents of the University of California
