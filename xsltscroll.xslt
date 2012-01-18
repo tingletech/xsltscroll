@@ -32,28 +32,34 @@ This XSLT 1.0 XSLT will extract all the annotation elements and
 combine them into one markdown document.
 
 ## Code Documentation
-</a:md><a:md l='l'>
- * set `xsl:output` to text, utf-8 </a:md>
+</a:md>
   <xsl:output 
+    a:md="set output to text b/c output is not xml"
     method="text"
     encoding="utf-8"
   />
 
-<a:md l='l'> * root match </a:md>
-  <xsl:template match="/">
-    <xsl:apply-templates select="//a:md" mode="extract"/>
+  <xsl:template match="/" a:md="root template">
+    <xsl:apply-templates select="//a:md|//@a:md" mode="extract"/>
   </xsl:template>
 
-<a:md l='l'> * copy everything out of `a:md` </a:md>
-  <xsl:template match="a:md" mode="extract"><xsl:text>
+  <xsl:template match="a:md" mode="extract"><xsl:text
+  a:md="just copy `a:md` to result document">
 </xsl:text>
     <xsl:copy-of select="."/>
-    <xsl:if test="@l='l'">
-      <xsl:text>(</xsl:text>
-      <xsl:value-of select="saxon:line-number()"/>
-      <xsl:text>)</xsl:text>
-    </xsl:if>
   </xsl:template>
+
+  <xsl:template match="@a:md" mode="extract"><xsl:text 
+  a:md="format `@a:md` as a list; with line number, element, and comments">
+ * (</xsl:text>
+      <xsl:value-of select="saxon:line-number()"/>
+      <xsl:text>): </xsl:text>
+      <xsl:value-of select="name(..)"/>
+      <xsl:text> *</xsl:text>
+      <xsl:value-of select="."/>
+      <xsl:text>*</xsl:text>
+  </xsl:template>
+
 <a:md>
 ## Copying
 Copyright (c) 2012, Regents of the University of California

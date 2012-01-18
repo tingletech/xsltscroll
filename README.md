@@ -23,10 +23,10 @@ combine them into one markdown document.
 
 ## Code Documentation
 
-
- * set `xsl:output` to text, utf-8 (35)
- * root match (42)
- * copy everything out of `a:md` (47)
+ * (40): xsl:output *set output to text b/c output is not xml*
+ * (42): xsl:template *root template*
+ * (47): xsl:text *just copy `a:md` to result document*
+ * (53): xsl:text *format `@a:md` as a list; with line number, element, and comments*
 
 ## Copying
 Copyright (c) 2012, Regents of the University of California
